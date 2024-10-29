@@ -39,7 +39,7 @@ Pod::Spec.new do |spec|
   #  Popular ones are 'MIT', 'BSD' and 'Apache License, Version 2.0'.
   #
 
-  spec.license      = { :type => "MIT", :file => "FILE_LICENSE" }
+  spec.license      = { :type => "MIT", :file => "LICENSE" }
   # spec.license      = { :type => "MIT", :file => "FILE_LICENSE" }
 
 
@@ -97,10 +97,10 @@ Pod::Spec.new do |spec|
 
   # spec.public_header_files = "Classes/**/*.h"
 
-  valid_archs = ['armv7s','arm64','x86_64']
-  
+  # spec.source_files = 'Framework/FlyIMCoreMacOS.xcframework/macos-arm64_x86_64/FlyIMCoreMacOS.framework/Headers/**/*.h'
+  spec.static_framework = true
   spec.xcconfig = {
-    'VALID_ARCHS' =>  valid_archs.join(' '),
+    'VALID_ARCHS' => 'x86_64 armv7 armv7s arm64'
   }
   
   spec.pod_target_xcconfig = {
