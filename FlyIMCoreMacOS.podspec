@@ -98,7 +98,6 @@ Pod::Spec.new do |spec|
   # spec.public_header_files = "Classes/**/*.h"
 
   # spec.source_files = 'Framework/FlyIMCoreMacOS.xcframework/macos-arm64_x86_64/FlyIMCoreMacOS.framework/Headers/**/*.h'
-  spec.static_framework = true
   spec.xcconfig = {
     'VALID_ARCHS' => 'x86_64 armv7 armv7s arm64'
   }
@@ -106,8 +105,7 @@ Pod::Spec.new do |spec|
   spec.pod_target_xcconfig = {
     'ARCHS[sdk=iphonesimulator*]' => '$(ARCHS_STANDARD_64_BIT)'
   }
-  
-  spec.vendored_frameworks = 'Framework/*.xcframework'
+  spec.vendored_frameworks = 'Framework/FlyIMCoreMacOS.xcframework'
 
   # ――― Resources ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
   #
@@ -134,6 +132,7 @@ Pod::Spec.new do |spec|
 
   # spec.library   = "iconv"
   # spec.libraries = "iconv", "xml2"
+  spec.libraries = "resolv"
 
 
   # ――― Project Settings ――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
